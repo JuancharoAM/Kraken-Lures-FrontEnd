@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //logica de los productos destacados//
 
-const URLApi = "http://localhost:8082/api-proyecto/productos";
+const URLApi = "http://localhost:8082/api-proyecto/productos/tendencia";
 const URLImg = "http://localhost:8082/api-proyecto/img?imageRootName=";
 const productosDestacadosContainer = document.getElementById('productosDestacadosContainer');
 
@@ -69,7 +69,7 @@ async function obtenerProductosDestacados() {
     try {
         const response = await fetch(URLApi);
         const data = await response.json();
-        return data;
+        return data.content;
     } catch (error) {
         console.error('Error al obtener productos:', error);
         throw error;
@@ -77,7 +77,8 @@ async function obtenerProductosDestacados() {
 }
 
 // Función para renderizar los productos en el contenedor
-function renderizarProductos(productos) {
+function renderizarProductos(productosCargados) {
+    let productos = productosCargados;
     productos.forEach(producto => {
         const productoElement = document.createElement('div');
         productoElement.classList.add('productoDestacado');
@@ -110,5 +111,7 @@ async function cargarProductosDestacados() {
     }
 }
 
+/*
 // Llama a la función principal al cargar la página
-document.addEventListener('DOMContentLoaded', cargarProductosDestacados);
+document.addEventListener('DOMContentLoaded', cargarProductosDestacados);*/
+
