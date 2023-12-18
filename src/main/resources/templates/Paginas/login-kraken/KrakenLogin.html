@@ -11,10 +11,10 @@
     <section id="seccion_registro">
         <div id="contenedor" class="filter">
         <h1 id="titulo_registro">Bienvenidos</h1>
-        <form method="get">
-            <input type="text" placeholder="Ingrese su usuario" class="input_form_registro" name="usuario" id="input_usuario">
-            <input type="password" placeholder="ingrese su contraseña" class="input_form_registro" name="password" id="input_contrasena">
-            <input id="boton_registro" type="button" value="Login">
+        <form class="form-signin" method="post" th:action="@{/login}">
+            <input type="text" placeholder="Ingrese su usuario" class="input_form_registro form-control" name="username" id="username" required>
+            <input type="password" placeholder="ingrese su contraseña" class="input_form_registro form-control" name="password" id="password" required>
+            <input id="boton_registro" type="submit" value="Login">
         </form>
         <div id="olvido_registro">
             <a href="">¿Olvidaste tu contraseña?</a>

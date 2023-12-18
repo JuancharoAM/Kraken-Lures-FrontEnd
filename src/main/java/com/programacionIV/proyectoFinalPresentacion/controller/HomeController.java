@@ -16,7 +16,7 @@ public class HomeController {
 		return "paginas/productos/productos";
 	}
 	
-	@GetMapping("loginKraken")
+	@GetMapping("/login")
 	public String loginKraken() {
 		return "paginas/login-kraken/KrakenLogin";
 	}
