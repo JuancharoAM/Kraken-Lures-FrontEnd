@@ -21,4 +21,9 @@ public class HomeController {
 		return "paginas/login-kraken/KrakenLogin";
 	}
 
+	@GetMapping("/pedido")
+	public String pedido() {
+		return "paginas/pedido/pedido";
+	}
+
 }
